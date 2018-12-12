@@ -60,7 +60,7 @@ public class TextOutput implements Closeable {
 	}
 	
 	private void createWriter(File file, boolean isAppend) throws IOException {
-		createWriter(file, isAppend, false);
+		createWriter(file, isAppend, true);
 	}
 	
 	private void createWriter(File file, boolean isAppend, boolean isOverwrite) throws IOException {
@@ -121,7 +121,6 @@ public class TextOutput implements Closeable {
 				
 		try {
 			writer.append(content);
-			writer.append(lineSeparator);
 			writeSuccessCount++;
 		} catch (IOException e) {
 			logger.debug("write the line failed : " + content + "\t" + e);
